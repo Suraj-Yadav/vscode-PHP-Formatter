@@ -1,0 +1,26 @@
+{
+  "name": "php-formatter",
+  "displayName": "PHP Formatter",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "Suraj-Yadav",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension",
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "asyncawait": "^1.0.6"
+  }
+}
