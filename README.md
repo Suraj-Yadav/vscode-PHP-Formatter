@@ -22,19 +22,22 @@ This extension contributes the following settings:
 1. Get the Extension from somewhere.
 2. Install `js-beautify`.
 	* **[Python]** Install with Python:
-		```bash
+		```
 		$ pip install jsbeautifier
 		```   
 	* **[NoodeJS]** Install with NodeJS
-		```bash
+		```
 		$ npm -g install js-beautify
 		```
 3. Install `php_beautifier`.
 	1. Make sure you have `PEAR` Package Manager installed. If not, get it at http://pear.php.net/manual/en/installation.getting.php.
-	2. Install `php_beautifier`
-		```bash
+	2. Inatall PHP_Beautifier
+		```
 		$ pear install PHP_Beautifier
 		```
+## Roadmap
+*	Use inbuilt vscode html formatter instead of `html-beautify`.
+*	Add options to pass to `php_beautifier`. 
 
 ## Known Issues
 
