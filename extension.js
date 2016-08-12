@@ -22,13 +22,10 @@ function format(document, range, options) {
 		content = content.slice(0, start) + '<phptag></phptag>' + content.slice(end, content.length);
 	}
 
-	var tempFile = 'C:/Users/Suraj/Desktop/htmlPart.html';
-	fs.writeFileSync(tempFile, content);
 	// var uri = vscode.Uri.parse('file:///some/path/to/file.html');
 	// var success = await vscode.commands.executeCommand('vscode.executeFormatDocumentProvider', uri, options);
 
-	// var htmlContent = String(execFileSync('C:/ExtLibs/tidy-5.1.25-win64/bin/tidy.exe', ['-m', '-config', 'C:/Users/Suraj/Desktop/config.txt'], { input: content }));
-	var htmlContent = String(execFileSync('html-beautify.cmd', ['-f', 'C:/Users/Suraj/Desktop/htmlPart.html']));
+	var htmlContent = String(execFileSync('html-beautify.cmd', [], { input: content }));
 
 	var phpContent = String(execFileSync('php_beautifier.bat', [], { input: phpString }));
 
@@ -50,10 +47,10 @@ function format(document, range, options) {
 
 	content = content + htmlContent;
 
-	console.log(content);
+	// console.log(content);
 
 	result.push(new vscode.TextEdit(range, content));
-	
+
 	return result;
 }
 
