@@ -36,6 +36,10 @@ This extension contributes the following settings:
 		$ pear install PHP_Beautifier
 		```
 
+## Roadmap
+*	Use inbuilt vscode html formatter insteas;lfs;lf;skf;kd of `html-beautify`.
+*	Add options to pass to `php_beautifier`.
+
 ## Known Issues
 
 Nothing Found Yet.  
