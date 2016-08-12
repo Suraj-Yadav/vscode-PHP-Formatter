@@ -31,10 +31,11 @@ This extension contributes the following settings:
 		```
 3. Install `php_beautifier`.
 	1. Make sure you have `PEAR` Package Manager installed. If not, get it at http://pear.php.net/manual/en/installation.getting.php.
-	2. Inatall PHP_Beautifier
+	2. Install PHP_Beautifier
 		```
 		$ pear install PHP_Beautifier
 		```
+		
 ## Roadmap
 *	Use inbuilt vscode html formatter instead of `html-beautify`.
 *	Add options to pass to `php_beautifier`. 
