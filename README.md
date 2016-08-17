@@ -9,23 +9,18 @@ A PHP formatter for VS Code, uses html-beautify and php_beautifier.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `phpFormatter.php_beautifier.options`: Options to be passed to PHP_Beautifier. See `php_beautifier --help` for options. 
+* `phpFormatter.html-beautify.enabled`: Enable/Disable formatting of HTML part.
+* `phpFormatter.html-beautify.options`: Options to be passed to html-beautify. See `html-beautify -help` for options.
 
 ## Installation
-1. Get the Extension from somewhere.
+1. Download the file `php-formatter-0.0.1.vsix`. Install it using `code php-formatter-0.0.1.vsix`. 
 2. Install `js-beautify`.
 	* **[Python]** Install with Python:
 		```
 		$ pip install jsbeautifier
 		```   
-	* **[NoodeJS]** Install with NodeJS
+	* **[NodeJS]** Install with NodeJS:
 		```
 		$ npm -g install js-beautify
 		```
@@ -37,8 +32,7 @@ This extension contributes the following settings:
 		```
 		
 ## Roadmap
-*	Use inbuilt vscode html formatter instead of `html-beautify`.
-*	Add options to pass to `php_beautifier`. 
+*	Use inbuilt vscode html formatter instead of `html-beautify`. 
 
 ## Known Issues
 

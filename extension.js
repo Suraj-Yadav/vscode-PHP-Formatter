@@ -25,14 +25,25 @@ function format(document, range, options) {
 	// var uri = vscode.Uri.parse('file:///some/path/to/file.html');
 	// var success = await vscode.commands.executeCommand('vscode.executeFormatDocumentProvider', uri, options);
 
-	var htmlContent = String(execFileSync('html-beautify.cmd', [], { input: content }));
+	var config = vscode.workspace.getConfiguration('phpFormatter');
 
-	var phpContent = String(execFileSync('php_beautifier.bat', [], { input: phpString }));
+	console.log(config);
+	console.log(config['html-beautify']['options']);
+
+	var htmlContent = '';
+	if (config['html-beautify']['enabled'])
+		htmlContent = String(execFileSync('html-beautify.cmd', config['html-beautify']['options'], { input: content }));
+	else
+		htmlContent = content;
+
+	var phpContent = String(execFileSync('php_beautifier.bat', config['php_beautifier']['options'], { input: phpString }));
+
+	phpContent = phpContent.replace(RegExp('\r\n', 'g'), '\n');
 
 	console.log(htmlContent);
 	console.log(phpContent);
 
-	content = '';
+	var formattedContent = '';
 
 	while (htmlContent.includes('<phptag>')) {
 		let start1 = htmlContent.indexOf('<phptag>'),
@@ -40,16 +51,16 @@ function format(document, range, options) {
 			start2 = phpContent.indexOf('<?php'),
 			end2 = phpContent.indexOf('?>') + 2,
 			indentation = htmlContent.slice(htmlContent.slice(0, start1).lastIndexOf('\n') + 1, start1);
-		content = content + htmlContent.slice(0, start1) + phpContent.slice(start2, end2).replace(RegExp('\n', 'g'), '\n' + indentation);
+		formattedContent = formattedContent + htmlContent.slice(0, start1) + phpContent.slice(start2, end2).replace(RegExp('\n', 'g'), '\n' + indentation);
 		htmlContent = htmlContent.slice(end1, htmlContent.length);
 		phpContent = phpContent.slice(0, start2) + phpContent.slice(end2, phpContent.length);
 	}
 
-	content = content + htmlContent;
+	formattedContent = formattedContent + htmlContent;
 
-	// console.log(content);
+	// console.log(formattedContent);
 
-	result.push(new vscode.TextEdit(range, content));
+	result.push(new vscode.TextEdit(range, formattedContent));
 
 	return result;
 }

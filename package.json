@@ -1,26 +1,51 @@
 {
-  "name": "php-formatter",
-  "displayName": "PHP Formatter",
-  "description": "",
-  "version": "0.0.1",
-  "publisher": "Suraj-Yadav",
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./extension",
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install"
-  },
-  "devDependencies": {
-    "vscode": "^0.11.0"
-  },
-  "dependencies": {
-    "asyncawait": "^1.0.6"
-  }
+	"name": "php-formatter",
+	"displayName": "PHP Formatter",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "Suraj-Yadav",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension",
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"vscode": "^0.11.15"
+	},
+	"contributes": {
+		"configuration": {
+			"title": "PHP Formatter Properties",
+			"properties": {
+				"phpFormatter.html-beautify.enabled":{
+					"description": "Specify wheter to format the HTML part",
+					"type": "boolean",
+					"default": true
+				},
+				"phpFormatter.php_beautifier.options":{
+					"description": "Config Options to be used by PHP_Beautifier",
+					"type": "array",
+					"default": [],
+					"items": {
+						"type": "string"
+					}
+				},
+				"phpFormatter.html-beautify.options":{
+					"description": "Config Options to be used by html-beautify",
+					"type": "array",
+					"default": [],
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		}	
+	}
 }
