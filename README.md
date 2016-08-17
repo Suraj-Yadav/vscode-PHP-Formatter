@@ -1,4 +1,4 @@
-# php-formatter README
+# php-formatter
 
 A PHP formatter for VS Code, uses html-beautify and php_beautifier. 
 
