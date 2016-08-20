@@ -4,6 +4,17 @@
 	"description": "",
 	"version": "0.0.1",
 	"publisher": "Suraj-Yadav",
+	"author": {
+		"name": "Suraj Yadav",
+		"email": "surajyadav20@outlook.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Suraj-Yadav/vscode-PHP-Formatter"
+	},
+	"bugs": {
+		"url": "https://github.com/Suraj-Yadav/vscode-PHP-Formatter/issues"
+	},
 	"engines": {
 		"vscode": "^1.0.0"
 	},
@@ -24,12 +35,12 @@
 		"configuration": {
 			"title": "PHP Formatter Properties",
 			"properties": {
-				"phpFormatter.html-beautify.enabled":{
+				"phpFormatter.html-beautify.enabled": {
 					"description": "Specify wheter to format the HTML part",
 					"type": "boolean",
 					"default": true
 				},
-				"phpFormatter.php_beautifier.options":{
+				"phpFormatter.php_beautifier.options": {
 					"description": "Config Options to be used by PHP_Beautifier",
 					"type": "array",
 					"default": [],
@@ -37,7 +48,7 @@
 						"type": "string"
 					}
 				},
-				"phpFormatter.html-beautify.options":{
+				"phpFormatter.html-beautify.options": {
 					"description": "Config Options to be used by html-beautify",
 					"type": "array",
 					"default": [],
@@ -46,6 +57,6 @@
 					}
 				}
 			}
-		}	
+		}
 	}
 }
